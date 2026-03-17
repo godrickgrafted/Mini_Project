@@ -1,4 +1,8 @@
 from flask import Flask, render_template
+import sqlite3
+from sqlite3 import error
+
+DATABASE = Tutoring_db
 
 app = Flask(__name__)
 
