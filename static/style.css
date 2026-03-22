@@ -190,6 +190,22 @@ table {
     font-weight: bold;
 }
 
+.form-group select {
+    padding: 0.3rem;
+    width: 100%;
+}
+
+.home-box {
+    border: 1px solid rgba(189, 195, 199, 1.0);
+    color: rgba(44, 62, 80, 1.0);
+    padding: 1rem;
+    background-color: white;
+}
+
+.home-box p {
+    margin-bottom: 0.5rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     .container {

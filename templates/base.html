@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, inital-scale=1.0">
-    <title>WC Tutoring</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="utf-8">
+    <title>Tutoring Hub</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fonts + CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='smile.css') }}" rel="stylesheet">
 </head>
+
 <body>
 
-<nav>
-    <div class="container">
-        <div class="brand">WC Tutoring</div>
-        <div class="nav_links">
-            <a href="/">Home</a>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container">
+
+            <div class="navbar-brand">
+                Tutoring Hub
+            </div>
+
+            <div class="navbar-links">
+                <a href="/">home</a>
+                <a href="/sessions">sessions</a>
+
+                {% if logged_in == True %}
+                    <a href="/create_session">create</a>
+                    <a href="/logout">logout</a>
+                {% else %}
+                    <a href="/login">login</a>
+                    <a href="/signup">signup</a>
+                {% endif %}
+            </div>
+
         </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="container">
+        <header>
+            <h1>Tutoring Hub</h1>
+            <h2>{% block pageheading %}{% endblock %}</h2>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
     </div>
-</nav>>
-
-<div class="container">
-    <header>
-        <h1>Wellington College Tutoring</h1>
-        <h2>{% block pageheading %}{% endblock %}</h2>
-    </header>
-
-    <main>
-        {% block main %}
-        {% endblock %}
-    </main>
-</div>
 
 </body>
 </html>

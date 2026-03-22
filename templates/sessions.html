@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block pageheading %}
+sessions
+<p>View all tutoring sessions currently created on the website</p>
+{% endblock %}
+
+{% block main %}
+<div class="products">
+    {% for one_session in list_of_sessions %}
+        <div class="product-box">
+            <div class="product-box-heading">
+                <h3>{{ one_session[1] }}</h3>
+            </div>
+
+            <div class="product-box-info">
+                <p>{{ one_session[2] }}</p>
+                <p><strong>Subject:</strong> {{ one_session[6] }}</p>
+                <p><strong>Date:</strong> {{ one_session[3] }}</p>
+                <p><strong>Time:</strong> {{ one_session[4] }}</p>
+                <p><strong>Location:</strong> {{ one_session[5] }}</p>
+                <p><strong>Tutor:</strong> {{ one_session[7] }}</p>
+                <p><strong>Created by:</strong> {{ one_session[8] }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
